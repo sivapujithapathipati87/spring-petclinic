@@ -3,19 +3,19 @@ pipeline{
         label 'Maven'
     }
     options{
-        timeout(time: 30, unit:'MINUTE')
+        timeout(time: 30, unit: 'MINUTE')
     }
     triggers{
         pollSCM('* * * * *')
     }
     stages{
         stage('git'){
-            git url:'https://github.com/sivapujithapathipati87/spring-petclinic.git'
-            branch:'dev'
+            git url: 'https://github.com/sivapujithapathipati87/spring-petclinic.git',
+            branch: 'dev'
       }
       stage('build'){
         steps{
-            sh'mvn clean package'
+            sh 'mvn clean package'
         }
       }
     }

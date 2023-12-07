@@ -21,19 +21,6 @@ pipeline{
         }
       }
     }
-    post{
-        always{
-            echo 'say hello to every one'
-        }
-        success{
-            mail subject: 'build is success',
-                  to: 'sivapujithapathipati@gmail.com'      
-        }
-        failure{
-            mail subject: 'build is success',
-                  to: 'sivapujithapathipati@gmail.com'
-        }
-    }
 }
 
 
